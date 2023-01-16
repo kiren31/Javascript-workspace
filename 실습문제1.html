@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practice1</h1>
+    
+<form action="">
+    <fieldset>
+        <legend>취미</legend>
+            <input type="checkbox" name="selectall" value="selectall" id="전체선택" onclick="selectAll(this)">
+            <label for="">전체선택</label>    
+            
+            <input type="checkbox" name="book" value="종합" id="종합" onclick="checkSelectAll()"/> 종합
+            
+            <input type="checkbox" name="book" value="소설" id="소설" onclick="checkSelectAll()"/> 소설
+            
+            
+            <input type="checkbox" name="book" value="시/에세이" id="시/에세이" onclick="checkSelectAll()"/> 시/에세이
+            
+
+            
+
+            <input type="checkbox" name="book" value="경제/경영" id="경제/경영" onclick="checkSelectAll()"/>경제/경영
+            
+            <input type="checkbox" name="book" value="자기계발" id="자기계발" onclick="checkSelectAll()"/>자기계발
+            
+            <input type="checkbox" name="book" value="아동" id="아동" onclick="checkSelectAll()"/>아동
+
+            <br>
+
+            <input type="checkbox" name="book" value="여행" id="여행" onclick="checkSelectAll()"/>여행
+
+            <input type="checkbox" name="book" value="과학" id="과학" onclick="checkSelectAll()"/>과학
+
+            <input type="checkbox" name="book" value="역사/문화" id="역사/문화" onclick="checkSelectAll()"/>역사/문화
+
+            <input type="checkbox" name="book" value="외국어" id="외국어" onclick="checkSelectAll()"/>외국어
+
+            <input type="checkbox" name="book" value="컴퓨터" id="컴퓨터" onclick="checkSelectAll()"/>컴퓨터
+
+            <input type="checkbox" name="book" value="만화" id="만화" onclick="checkSelectAll()"/>만화
+    </fieldset>
+</form>
+
+<br> 
+
+<button onclick="allSelect();">카테고리 선택</button> 
+<div id="area3" class="area" style ="border : 1px solid red; width : 470px; height : 130px;"></div>
+    
+<script>
+   function checkSelectAll()  {
+  const checkboxes 
+    = document.querySelectorAll('input[name="book"]');
+  const checked 
+    = document.querySelectorAll('input[name="book"]:checked');
+  const selectAll 
+    = document.querySelector('input[name="selectall"]');
+  
+  if(checkboxes.length === checked.length)  {
+    selectAll.checked = true;
+  }else {
+    selectAll.checked = false;
+  }
+
+}
+
+function selectAll(selectAll)  {
+  const checkboxes 
+     = document.getElementsByName('book');
+  
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked
+  })
+}
+
+
+function accessName(){
+    
+
+            let book = document.getElementsByName("book");
+           
+            
+            let checkedItem = "";
+
+            for(let i=0; i<book.length; i++){
+
+                if(book[i].checked){
+                    checkedItem += book[i].value+" ";
+                }
+            }
+
+            document.getElementById("area3").innerHTML = checkedItem;
+        }
+
+    
+
+
+
+</script>
+
+</body>
+</html>
