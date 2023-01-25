@@ -164,7 +164,7 @@
     <button onclick="location.href = 'https://www.naver.com'">네이버로 이동</button>
     <br>
 
-    <label onclick="location.href = 'https://www.naver.com'">네이버로 가기</label>
+    <label onclick="location.assign= ('https://www.naver.com')">네이버로 가기</label>
     <br>
 
     <button onclick="location.replace('https://www.naver.com')">네이버로 이동</button>
@@ -221,7 +221,7 @@
             // 1) elementNode 객체 생성 : document.createElement("태그명")
 
             let elementNode = document.createElement("h3"); // <h3></h3>;
-
+            elementNode.setAttribute("class","hello")
             // 2) textNode 객체 생성 : document.createTextNode("문구");
             let textNode = document.createTextNode("안녕하세요"); // 안녕하세요
             // 3) 두개의 노드를 연결(즉, 요소 노드 하위로 텍스트 노드 추가)
